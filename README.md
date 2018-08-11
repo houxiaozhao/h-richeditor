@@ -6,11 +6,23 @@
 
 ```bash
 # install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+npm i h-richeditor
+## OR
+yarn add h-richeditor
 ```
+
+`main.js`中
+
+```javascript
+import Vue from 'vue';
+import RichEditor from 'h-richeditor';
+Vue.use(RichEditor);
+```
+
+组件中
+
+```vue
+<rich-editor :title.sync="title" :description.sync="description" placeholder="标题" contentplaceholder="内容" :hasTitle=true>
+</rich-editor>
+```
+
