@@ -1,6 +1,6 @@
 <template>
   <div style="width:100%">
-    <div class="rich-editor">
+    <div class="rich-editor" :style="{backgroundColor:this.bgColor,borderColor:this.bgColor}">
       <div class="content">
         <svg style="position: absolute;right: 0px;bottom: 0px;" t="1533975745402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2587" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24">
           <path d="M629.76 814.08l-404.48-5.12c-51.2 0-92.16-40.96-92.16-94.72V396.8c0-51.2 40.96-94.72 94.72-94.72h563.2c51.2 0 94.72 40.96 94.72 94.72v335.36h-51.2V396.8c0-23.04-17.92-43.52-43.52-43.52h-563.2c-23.04 0-43.52 17.92-43.52 43.52v317.44c0 23.04 17.92 43.52 43.52 43.52l404.48 5.12-2.56 51.2z" fill="#333333" p-id="2588"></path>
@@ -40,7 +40,11 @@ export default {
       }
     },
     description: String,
-    title: String
+    title: String,
+    bgColor: {
+      type: String,
+      default: '#cfd8dc'
+    }
   },
   components: { editable },
   mounted() {},
@@ -110,8 +114,6 @@ export default {
   opacity: 0;
 }
 .rich-editor {
-  background-color: #cfd8dc !important;
-  border-color: #cfd8dc !important;
   border-radius: 2px;
   min-width: 0;
   position: relative;
